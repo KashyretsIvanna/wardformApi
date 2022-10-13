@@ -10,6 +10,9 @@ const transporter = nodemailer.createTransport({
     pass: process.env.PASSWORD,
   },
 });
+router.get("/email", async (req, res) => {
+  res.status(200).json("Hello WARD");
+});
 
 router.post("/email", async (req, res) => {
   const body = req.body;
