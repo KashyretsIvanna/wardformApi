@@ -1,0 +1,29 @@
+{
+  "name": "wardback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KashyretsIvanna/WARDBACK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KashyretsIvanna/WARDBACK/issues"
+  },
+  "homepage": "https://github.com/KashyretsIvanna/WARDBACK#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemailer": "^6.8.0"
+  },
+  "engines": {
+    "node": "16.17.0"
+  }
+}
