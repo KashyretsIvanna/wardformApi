@@ -33,5 +33,5 @@ app.use((err, _, res, __) => {
 
 app.listen(process.env.PORT, function () {
   console.log("hello");
-  console.log("Node app is running on port", app.get("port"));
+  console.log("Node app is running on port");
 });

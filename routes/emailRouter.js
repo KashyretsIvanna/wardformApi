@@ -21,27 +21,28 @@ router.post("/email", async (req, res) => {
     to: "wardcompanyua@gmail.com",
     subject: "You have new message from client!",
     text:
-      `Client data ` + body.firstName &&
-      `firstName: ${body.firstName}` + body.lastName &&
-      ` lastName: ${body.lastName}` + body.email &&
-      ` email: ${body.email}` + body.tel &&
-      ` tel: ${body.tel}` + body.company &&
-      ` company: ${body.company}` + body.website &&
-      ` website: ${body.website}` + body.help &&
-      ` help: ${body.help}` + body.budget &&
-      ` budget: ${body.budget}` + body.fieldType &&
-      ` What are you looking for?: ${body.fieldType.forEach(
-        (el) => ` ${el},`
-      )}` + body.classificationArray &&
-      ` Business classification: ${body.classificationArray.forEach(
-        (el) => ` ${el},`
-      )}`,
+      `Client data ` +
+      `firstName: ${body.firstName && body.firstName}` +
+      ` lastName: ${body.lastName && body.lastName}` +
+      ` email: ${body.email && body.email}` +
+      ` tel: ${body.tel && body.tel}` +
+      ` company: ${body.company && body.company}` +
+      ` website: ${body.website && body.website}` +
+      ` help: ${body.help && body.help}` +
+      ` budget: ${body.budget && body.budget}` +
+      ` What are you looking for?: ${
+        body.fieldType && body.fieldType.forEach((el) => ` ${el},`)
+      }` +
+      ` Business classification: ${
+        body.classificationArray &&
+        body.classificationArray.forEach((el) => ` ${el},`)
+      }`,
   };
   await transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
       res.status(401);
-      res.send({ error: error });
+      res.send({ error: "error" });
     } else {
       console.log("Email sent: " + info.response);
       res.status(200);
