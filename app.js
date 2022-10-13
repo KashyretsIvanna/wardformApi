@@ -10,7 +10,7 @@ app.use(express.json());
 // cors
 app.use(cors());
 
-app.use("/api", router);
+app.use("/", router);
 
 app.use((_, res, __) => {
   res.status(404).json({
