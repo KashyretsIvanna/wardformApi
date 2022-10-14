@@ -16,6 +16,7 @@ router.get("/email", async (req, res) => {
 
 router.post("/email", async (req, res) => {
   const body = req.body;
+  console.log(req.body);
   const mailOptions = {
     from: "kasirecivanna@gmail.com",
     to: "wardcompanyua@gmail.com",
@@ -51,7 +52,7 @@ router.post("/email", async (req, res) => {
   });
 });
 
-router.post("/onlyemail", cors(corsOptions), async (req, res) => {
+  router.post("/onlyemail", async (req, res) => {
   const body = req.body;
   console.log(req.body);
   const mailOptions = {
