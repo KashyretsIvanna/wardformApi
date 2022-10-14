@@ -47,12 +47,12 @@ router.post("/email", async (req, res) => {
     } else {
       console.log("Email sent: " + info.response);
       res.status(200);
-      res.send({ message: mailOptions });
+      res.send({ message: info.response });
     }
   });
 });
 
-  router.post("/onlyemail", async (req, res) => {
+router.post("/onlyemail", async (req, res) => {
   const body = req.body;
   console.log(req.body);
   const mailOptions = {
