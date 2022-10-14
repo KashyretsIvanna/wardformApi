@@ -31,9 +31,11 @@ router.post("/email", async (req, res) => {
       ` website: ${body.website && body.website}` +
       ` help: ${body.help && body.help}` +
       ` budget: ${body.budget && body.budget}` +
-      ` What are you looking for?: ${body.fieldType && body.fieldType[0]}` +
+      ` What are you looking for?: ${
+        body.fieldType && body.fieldType.toString()
+      }` +
       ` Business classification: ${
-        body.classificationArray && body.classificationArray[0]
+        body.classificationArray && body.classificationArray.toString()
       }`,
   };
   await transporter.sendMail(mailOptions, function (error, info) {
