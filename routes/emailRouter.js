@@ -31,9 +31,9 @@ router.post("/email", async (req, res) => {
       ` website: ${body.website && body.website}` +
       ` help: ${body.help && body.help}` +
       ` budget: ${body.budget && body.budget}` +
-      ` What are you looking for?: ${body.fieldType && body.fieldType}` +
+      ` What are you looking for?: ${body.fieldType && body.fieldType[0]}` +
       ` Business classification: ${
-        body.classificationArray && body.classificationArray
+        body.classificationArray && body.classificationArray[0]
       }`,
   };
   await transporter.sendMail(mailOptions, function (error, info) {
@@ -44,7 +44,7 @@ router.post("/email", async (req, res) => {
     } else {
       console.log("Email sent: " + info.response);
       res.status(200);
-      res.send({ message: info.response });
+      res.send({ message: mailOptions });
     }
   });
 });
