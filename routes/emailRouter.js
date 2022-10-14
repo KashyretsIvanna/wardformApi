@@ -19,7 +19,7 @@ router.post("/email", async (req, res) => {
   console.log(req.body);
   const mailOptions = {
     from: "kasirecivanna@gmail.com",
-    to: "wardcompanyua=@gmail.com",
+    to: "wardcompanyua@gmail.com",
     subject: "You have new message from client!",
     text:
       `Client data ` +
