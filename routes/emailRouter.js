@@ -38,6 +38,18 @@ router.post("/email", async (req, res) => {
         body.classificationArray && body.classificationArray.toString()
       }`,
   };
+});
+
+router.post("/onlyemail", async (req, res) => {
+  const body = req.body;
+  console.log(req.body);
+  const mailOptions = {
+    from: "kasirecivanna@gmail.com",
+    to: "wardcompanyua@gmail.com",
+    subject: "Client has just subscribed our news",
+    text: `Client data ` + ` email: ${body.email && body.email}`,
+  };
+
   await transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
