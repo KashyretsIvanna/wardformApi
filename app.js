@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const router = require("./routes/emailRouter");
+var bodyParser = require('body-parser')
 require("dotenv").config();
 
 const app = express();
@@ -9,7 +10,11 @@ const app = express();
 app.use(express.json());
 // cors
 app.use(cors());
-
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 app.use("/", router);
 
 app.use((_, res, __) => {

@@ -16,6 +16,7 @@ router.get("/email", async (req, res) => {
 
 router.post("/email", async (req, res) => {
   const body = req.body;
+  console.log(req);
   const mailOptions = {
     from: "kasirecivanna@gmail.com",
     to: "wardcompanyua@gmail.com",
