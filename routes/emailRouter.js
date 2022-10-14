@@ -70,7 +70,7 @@ router.post("/onlyemail", async (req, res) => {
     } else {
       console.log("Email sent: " + info.response);
       res.status(200);
-      res.send({ message: mailOptions });
+      res.send({ message: info.response });
     }
   });
 });
