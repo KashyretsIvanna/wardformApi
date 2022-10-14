@@ -16,10 +16,10 @@ router.get("/email", async (req, res) => {
 
 router.post("/email", async (req, res) => {
   const body = req.body;
-  console.log(req);
+  console.log(req.body);
   const mailOptions = {
     from: "kasirecivanna@gmail.com",
-    to: "wardcompanyua@gmail.com",
+    to: "wardcompanyua=@gmail.com",
     subject: "You have new message from client!",
     text:
       `Client data ` +
@@ -31,12 +31,9 @@ router.post("/email", async (req, res) => {
       ` website: ${body.website && body.website}` +
       ` help: ${body.help && body.help}` +
       ` budget: ${body.budget && body.budget}` +
-      ` What are you looking for?: ${
-        body.fieldType && body.fieldType.forEach((el) => ` ${el},`)
-      }` +
+      ` What are you looking for?: ${body.fieldType && body.fieldType}` +
       ` Business classification: ${
-        body.classificationArray &&
-        body.classificationArray.forEach((el) => ` ${el},`)
+        body.classificationArray && body.classificationArray
       }`,
   };
   await transporter.sendMail(mailOptions, function (error, info) {
